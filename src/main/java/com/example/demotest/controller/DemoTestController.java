@@ -14,7 +14,7 @@ public class DemoTestController {
     }
 
     @RequestMapping(value = "get", method = RequestMethod.GET)
-    public void demoGet(){
-        System.out.println("come in get");
+    public String demoGet(){
+        return "come in get";
     }
 }
