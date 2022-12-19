@@ -3,7 +3,7 @@ FROM daocloud.io/library/java:8u40-b09
 # 作者
 MAINTAINER demo-test author
 # 将jar包添加到容器中
-#COPY demo-test-0.0.1-SNAPSHOT.jar /usr/local/jenkins_deploy_test/docker/
+COPY demo-test-0.0.1-SNAPSHOT.jar /usr/local/jenkins_deploy_test/docker/
 WORKDIR /usr/local/jenkins_deploy_test/docker/
 # 运行jar包
 ENTRYPOINT ["nohup","java","-jar","/usr/local/jenkins_deploy_test/docker/demo-test-0.0.1-SNAPSHOT.jar","&"]
