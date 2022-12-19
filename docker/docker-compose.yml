@@ -7,4 +7,4 @@ services:
     image: demo-test:v1.0.0
     container_name: demo-test
     ports:
-      - 8080:8080
+      - 9999:9999
