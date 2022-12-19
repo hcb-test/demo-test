@@ -1,5 +1,5 @@
 # 基于java镜像创建新镜像
-FROM java:8
+FROM daocloud.io/library/java:8u40-b09
 # 作者
 MAINTAINER demo-test author
 # 将jar包添加到容器中
