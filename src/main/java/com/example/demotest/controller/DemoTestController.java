@@ -15,6 +15,6 @@ public class DemoTestController {
 
     @RequestMapping(value = "get", method = RequestMethod.GET)
     public String demoGet(){
-        return "come in get -- version 1.0.3";
+        return "devops push deploy success -- version 1.0.6";
     }
 }
