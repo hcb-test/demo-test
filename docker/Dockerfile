@@ -6,4 +6,4 @@ MAINTAINER demo-test author
 COPY demo-test-0.0.1-SNAPSHOT.jar /usr/local/jenkins_deploy_test/
 WORKDIR /usr/local/jenkins_deploy_test
 # 运行jar包
-ENTRYPOINT ["nohup","java","-jar","/usr/local/server/demo-test-0.0.1-SNAPSHOT.jar","&"]
+ENTRYPOINT ["nohup","java","-jar","/usr/local/jenkins_deploy_test/docker/demo-test-0.0.1-SNAPSHOT.jar","&"]
