@@ -17,5 +17,4 @@ public class DemoTestController {
     public void demoGet(){
         System.out.println("come in get");
     }
-
 }
