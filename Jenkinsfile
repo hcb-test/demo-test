@@ -14,7 +14,7 @@ pipeline {
         }
         stage('maven build') {
             steps {
-                sh 'D:\apache-maven-3.3.9\bin\mvn clean package'
+                sh 'D:\\apache-maven-3.3.9\\bin\\mvn clean package'
             }
         }
     }
