@@ -9,7 +9,12 @@ pipeline {
         }
         stage('wait for input') {
             steps {
-                input 'click'
+                input 'Approve'
+            }
+        }
+        stage('maven build') {
+            steps {
+                sh 'mvn clean package'
             }
         }
     }
