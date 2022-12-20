@@ -4,7 +4,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
-    image: demo-test:v1.0.0
+#    image: demo-test:v1.0.0
     container_name: demo-test
     ports:
       - 9999:9999
