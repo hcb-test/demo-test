@@ -26,7 +26,8 @@ pipeline {
         }
         stage('build and start docker image over SSH') {
             steps {
-                sshPublisher(publishers: [sshPublisherDesc(configName: 'test deploy server', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '''docker-compose down
+                sshPublisher(publishers: [sshPublisherDesc(configName: 'test deploy server', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '''cd /usr/local/jenkins_deploy_test/docker/
+                docker-compose down
                 docker-compose up -d --build
                 docker image prune -f''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
             }
