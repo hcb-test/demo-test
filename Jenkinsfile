@@ -24,5 +24,12 @@ pipeline {
                 chmod 777 *.jar''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'target/*.jar docker/*')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
             }
         }
+        stage('build and start docker image over SSH') {
+            steps {
+                sshPublisher(publishers: [sshPublisherDesc(configName: 'test deploy server', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '''docker-compose down
+                docker-compose up -d --build
+                docker image prune -f''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+            }
+        }
     }
 }
